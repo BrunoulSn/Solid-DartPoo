@@ -1,0 +1,73 @@
+SRP - Refatore o código para que cada classe tenha apenas uma responsabilidade (ex: salvar usuário ou autenticar usuário).
+class UsuarioManager {
+  void salvarUsuario(String nome) {
+    print('Usuário $nome salvo no banco de dados.');
+  }
+
+  bool autenticar(String usuario, String senha) {
+    return usuario == 'admin' && senha == '123';
+  }
+}
+
+--------------------------------------------------------
+OCP - Refatore o código para que ele suporte novos cargos sem precisar modificar a classe CalculadoraSalario.
+
+class CalculadoraSalario {
+  double calcular(String cargo) {
+    if (cargo == 'gerente') return 5000;
+    if (cargo == 'desenvolvedor') return 4000;
+    return 0;
+  }
+}
+
+-------------------------------------------------------
+LSP - Refatore para que Quadrado não quebre o comportamento esperado do Retangulo. Ou, se necessário, crie uma hierarquia adequada.
+
+class Retangulo {
+  double largura;
+  double altura;
+
+  Retangulo(this.largura, this.altura);
+
+  double area() => largura * altura;
+}
+
+class Quadrado extends Retangulo {
+  Quadrado(double tamanho) : super(tamanho, tamanho);
+}
+
+-----------------------------------------------------
+ISP - Divida a interface em interfaces menores para que cada classe implante apenas o que usa.
+
+abstract class Funcionario {
+  void trabalhar();
+  void comer();
+}
+
+class Robo implements Funcionario {
+  @override
+  void trabalhar() => print('Robô trabalhando');
+
+  @override
+  void comer() => throw Exception('Robô não come');
+}
+
+------------------------------------------------
+
+DIP - Refatore para que RelatorioService dependa de uma abstração (interface) e não da classe concreta.
+
+class MySQLDatabase {
+  void salvar(String dado) {
+    print('Salvando "$dado" no MySQL');
+  }
+}
+
+class RelatorioService {
+  final MySQLDatabase db;
+
+  RelatorioService(this.db);
+
+  void gerarRelatorio(String conteudo) {
+    db.salvar(conteudo);
+  }
+}
