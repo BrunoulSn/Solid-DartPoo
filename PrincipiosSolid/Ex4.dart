@@ -1,20 +1,22 @@
 abstract class Trabalhador {
+  // Método abstrato para trabalhar, deverá ser implementado nas subClasses que implementam a interface Trabalhador
   void trabalhar();
 }
 
 abstract class Alimentador {
+  // Método abstrato para comer, deverá ser implementado nas subClasses que implementam a interface Alimentador
   void comer();
 }
 
 class Funcionario implements Trabalhador, Alimentador {
-  @override
+  // Implementação do método trabalhar da interface Trabalhador
   void trabalhar() => print("Funcionário trabalhando");
 
-  @override
+  // Implementação do método comer da interface Alimentador
   void comer() => print("Funcionário comendo");
 }
 
 class Robo implements Trabalhador {
-  @override
+  // Implementação do método trabalhar da interface Trabalhador
   void trabalhar() => print("Robô trabalhando");
 }

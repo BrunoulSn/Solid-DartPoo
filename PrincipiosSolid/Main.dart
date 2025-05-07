@@ -2,7 +2,7 @@ import 'Ex2.dart';
 import 'Ex3.dart';
 import 'Ex4.dart';
 import 'Ex5.dart';
-import 'PrincipiosSolid/Ex1.dart';
+import 'Ex1.dart';
 
 void main(List<String> args) {
    // 1. Testando SRP - Responsabilidade Única
