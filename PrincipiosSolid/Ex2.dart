@@ -15,7 +15,6 @@ class Desenvolvedor extends Cargo {
 
 class CalculadoraSalario {
   // Método para calcular o salário de um cargo, recebe um objeto do tipo Cargo
-  double calcular(Cargo cargo) {
-    return cargo.calcularSalario();
-  }
+  double calcular(Cargo cargo) => cargo.calcularSalario();
+  
 }

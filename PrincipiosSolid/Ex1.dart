@@ -1,7 +1,5 @@
 //SRP - Refatore o código para que cada classe tenha apenas uma responsabilidade (ex: salvar usuário ou autenticar usuário).
 
-import 'dart:io';
-
 class UsuarioManager {
 
   // Método checar permissão de Usuário

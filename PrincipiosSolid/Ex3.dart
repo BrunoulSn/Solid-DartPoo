@@ -1,3 +1,5 @@
+import 'dart:math';
+
 abstract class Forma {
   // Método abstrato para calcular a área da forma, deverá ser implementado por cada subclasse
   double area();
@@ -21,5 +23,5 @@ class Quadrado extends Forma {
   Quadrado(this.tamanho);
 
   // Implementação do método area para calcular a área do quadrado
-  double area() => tamanho * tamanho;
+  double area() => pow(tamanho,2).toDouble();
 }
